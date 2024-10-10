@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "spanner_lib",
+    srcs = ["spanner.go"],
+    importpath = "github.com/arryved/simc/spanner_bazel_repro/spanner",
+    visibility = ["//visibility:private"],
+    deps = ["@com_google_cloud_go_spanner//:spanner"],
+)
+
+go_binary(
+    name = "spanner",
+    embed = [":spanner_lib"],
+    visibility = ["//visibility:public"],
+)
