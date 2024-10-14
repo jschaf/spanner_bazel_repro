@@ -1,5 +1,7 @@
 # Spanner Go client not building on Bazel
 
+See https://github.com/googleapis/google-cloud-go/issues/10982 for resolution.
+
 This is a minimal reproduction of the Spanner go client not building with Bazel.
 
 To reproduce:
@@ -54,5 +56,3 @@ go_deps.gazelle_override(
     path = "cel.dev/expr",
 )
 ```
-
-To work around 
